@@ -41,9 +41,16 @@ function listBooks() {
 //Marked as read function
 
 function markAsRead(title) {
-    
+    const book = library.find(book => book.title() === title());
+    if (book) {
+        book.isRead = true;
+        alert(`Book ${book.title} marked as read.`);
+    } else {
+        alert(`Book ${title} doesn't exist in your library`);
+    }
 }
 
+function bookLibrary() { 
 
 while(running) {
     const choice = prompt(`
@@ -73,3 +80,6 @@ while(running) {
             alert("Invalid choice.");
         }
     }
+}
+
+bookLibrary();
