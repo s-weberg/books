@@ -41,7 +41,7 @@ function listBooks() {
 //Marked as read function
 
 function markAsRead(title) {
-    const book = library.find(book => book.title() === title());
+    const book = library.find(book => book.title === title);
     if (book) {
         book.isRead = true;
         alert(`Book ${book.title} marked as read.`);
