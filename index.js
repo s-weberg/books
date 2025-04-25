@@ -24,6 +24,25 @@ function addBook() {
 }
 
 
+//list books function
+
+function listBooks() {
+    if (library.length === 0) {
+        console.log("There are no books in your library.");
+        return;
+    }
+    console.log("Library:");
+    library.forEach((book, index) => {
+        const status = book.isRead ? "Read" : "Not read";
+        console.log(`${index + 1}. Title: ${book.title}, Author: ${book.author}, Status: ${status}`);
+    });
+}
+
+//Marked as read function
+
+function markAsRead(title) {
+    
+}
 
 
 while(running) {
